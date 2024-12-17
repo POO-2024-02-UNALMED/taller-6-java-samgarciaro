@@ -32,16 +32,46 @@ public class Vehiculo {
         fabricante.getPais().incrementarVentas();
     }
 
-    // Getters
-    public String getPlaca() { return placa; }
-    public int getPuertas() { return puertas; }
-    public int getVelocidadMaxima() { return velocidadMaxima; }
-    public String getNombre() { return nombre; }
-    public double getPrecio() { return precio; }
-    public double getPeso() { return peso; }
-    public String getTraccion() { return traccion; }
-    public Fabricante getFabricante() { return fabricante; }
-    public static int getCantidadVehiculos() { return cantidadVehiculos; }
+    
+    public static void setCantidadVehiculos(int cantidad) {
+        cantidadVehiculos = cantidad;
+    }
+    public String getPlaca()
+    {
+         return placa; 
+    }
+    public int getPuertas() 
+    { 
+        return puertas; 
+    }
+    public int getVelocidadMaxima() 
+    { 
+        return velocidadMaxima; 
+    }
+    public String getNombre() 
+    { 
+        return nombre; 
+    }
+    public double getPrecio() 
+    { 
+        return precio; 
+    }
+    public double getPeso() 
+    { 
+        return peso; 
+    }
+    public String getTraccion() 
+    { 
+        return traccion; 
+    }
+    public Fabricante getFabricante() 
+    { 
+        return fabricante; 
+    }
+    public static int getCantidadVehiculos() 
+    { 
+        return cantidadVehiculos; 
+    }
 
     public static String vehiculosPorTipo() {
         return "Automoviles: " + automoviles + "\nCamionetas: " + camionetas + "\nCamiones: " + camiones;
