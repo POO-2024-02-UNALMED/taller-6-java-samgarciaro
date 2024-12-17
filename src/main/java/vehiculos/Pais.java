@@ -1,15 +1,28 @@
 package vehiculos;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Pais {
     private String nombre;
     private int ventas = 0;
+    private static List<Pais> listaPaises = new ArrayList<>();
 
-    public static Pais paisMasVendedor(List<Pais> paises) {
-        return paises.stream().max((p1, p2) -> p1.getVentas() - p2.getVentas()).orElse(null);
+    public Pais(String nombre) {
+        this.nombre = nombre;
+        listaPaises.add(this);
     }
-    public Pais(String nombre) { this.nombre = nombre; }
+
+    public static Pais paisMasVendedor() {
+        Pais max = null;
+        for (Pais pais : listaPaises) {
+            if (max == null || pais.getVentas() > max.getVentas()) {
+                max = pais;
+            }
+        }
+        return max;
+    }
+    
     public String getNombre() { return nombre; }
     public int getVentas() { return ventas; }
     public void incrementarVentas() { ventas++; }
